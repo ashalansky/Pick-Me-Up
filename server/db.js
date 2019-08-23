@@ -1,4 +1,4 @@
-const { Pool }  = require( 'pg' )
+const { Pool }  = require( 'pg' );
 
 const pool = new Pool({
   user: 'vagrant',
@@ -8,8 +8,6 @@ const pool = new Pool({
 });
 
 pool.query(`SELECT * FROM users`)
-.then(res => {
-  console.log(res.rows);
-  return res.rows;
-});
+.then(res => res.rows);
+
 module.exports = pool;
