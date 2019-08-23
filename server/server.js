@@ -13,10 +13,11 @@ app.use(cookieSession({
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.set("view engine", "ejs");
 
 //-----LANDING PAGE-----
 app.get('/', (req, res) => {
-
+  res.render('homepage');
 }); 
 //------LOGIN PAGE------
 app.get('/login', (req, res) => {
